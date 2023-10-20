@@ -1,0 +1,15 @@
+version: '2'
+volumes:
+  test-volume:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /run/mount/ext
+services:
+  app1:
+    build:
+      context: ./app1
+    volumes:
+      - 'test-volume:/data'
+
