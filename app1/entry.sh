@@ -1,3 +1,8 @@
 #!/bin/sh
 
-while true; do sleep 10; done
+# List everything in /data which should be mounted to `/run/mount/`
+echo "Everything in /data --> our external drive"
+tree /data
+# Idle forever to keep the container alive.
+balena-idle
+

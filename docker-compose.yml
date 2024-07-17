@@ -4,12 +4,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      o: bind
-      device: /run/mount/ext
+      o: bind,rshared
+      device: /run/mount
 services:
   app1:
     build:
       context: ./app1
     volumes:
       - 'test-volume:/data'
-
