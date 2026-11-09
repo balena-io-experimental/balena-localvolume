@@ -7,7 +7,7 @@ Add the following udev rule to `config.json`:
 ```
   "os": {
     "udevRules": {
-      "66": "ACTION==\"add\", SUBSYSTEMS==\"usb\", SUBSYSTEM==\"block\", ENV{ID_FS_USAGE}==\"filesystem\", RUN{program}+=\"/usr/bin/systemd-mount --no-block --automount=yes --bind-device --options=noexec,nosuid,nodev,sync --collect $devnode /run/mount/ext\"\n"
+      "66": "ACTION==\"add\", SUBSYSTEMS==\"usb\", SUBSYSTEM==\"block\", ENV{ID_FS_USAGE}==\"filesystem\", RUN{program}+=\"/usr/bin/systemd-mount --no-block --automount=yes --bind-device --options=noexec,nosuid,nodev,sync --collect $devnode /run/mount/ext\"\n",
       "67": "ACTION==\"add\", SUBSYSTEMS==\"nvme\", KERNEL==\"nvme[0-9]n[0-9]\", ENV{ID_FS_USAGE}==\"filesystem\", RUN{program}+=\"/usr/bin/systemd-mount --no-block --automount=yes --bind-device --options=noexec,nosuid,nodev,sync --collect $devnode /run/mount/ext\"\n"
     }
   },
