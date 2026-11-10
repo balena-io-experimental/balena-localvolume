@@ -4,5 +4,5 @@
 echo "Everything in /data --> our external drive"
 tree /data
 # Idle forever to keep the container alive.
-balena-idle
+sleep infinity
 

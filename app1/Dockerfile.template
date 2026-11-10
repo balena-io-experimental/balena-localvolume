@@ -1,6 +1,9 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:latest
+FROM debian:trixie-slim
 
-RUN install_packages tree
+# This stays active only during the docker build process:
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt install -y tree
 
 COPY entry.sh /bin/
 
